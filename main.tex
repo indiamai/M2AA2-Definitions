@@ -1,0 +1,443 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{M2AA2 Definitions}
+\author{indiamarsden }
+\date{March 2019}
+\newcommand{\f}{\mathcal{F}}
+
+\begin{document}
+
+\maketitle
+\section*{List of definitions}
+\begin{enumerate}
+    \item Kronecker delta
+    \item Permutation symbol
+    \item Directional Derivative
+    \item Div, Curl
+    \item Tangent plane
+    \item Irrotational
+    \item Solenoidal
+    \item Path integral
+    \item Projection Theorem
+    \item Volume integral
+    \item Green's Theorem
+    \item Stoke's Theorem
+    \item Divergence Theorem
+    \item Flux
+    \item Green's First Identity
+    \item Green's Second Identity
+    \item Flux theorem
+    \item Gradient in coordinate systems
+    \item Divergence in coordinate systems
+    \item Cartesian Length scales
+    \item Cylindrical Length scales
+    \item Spherical length scales
+    \item Fourier series
+    \item Parseval's Theorem
+    \item Half range fourier cosine series
+    \item Half range fourier sine series
+    \item Parsevals for half range
+    \item Exponential form of fourier series
+    \item Fourier transform
+    \item Inverse fourier transform
+    \item Fourier cosine transform
+    \item Inverse Fourier cosine transform
+    \item Fourier sine transform
+    \item Inverse Fourier sine transform
+    \item Properties of fourier transforms
+    \item Properties of half range fourier transforms
+    \item Convolution theorem
+    \item Energy theorem
+    \item MVT for integrals
+    \item Dirac delta
+    \item Sifting property of dirac delta
+    \item Wave Equation
+    \item Heat Equation
+    \item Laplace's Equation
+    \item Green's function in 3D
+    \item Green's function in 2D
+\end{enumerate}
+\section{Vector Calculus}
+\textbf{Kronecker delta}
+$  \delta_{xy} = \begin{cases} 1 & x = y \\ 0 & x \ne y \end{cases}$
+\\
+\\
+\textbf{Permutation symbol} $  \epsilon_{ijk} = \begin{cases} 0 & \mbox{if any two of } i, j, k \mbox{ are the same} \\ 1 & \mbox{if } i, j, j \mbox{ is a cyclic permutation of 1,2,3}  \\ -1 & \mbox{if } i, j, j \mbox{ is an acyclic permutation of 1,2,3} \end{cases}$
+\\
+\\
+\textbf{Directional derivative}
+$$ \frac{\partial \phi}{\partial s} = \frac{\partial \phi}{\partial n} \cos \theta = \frac{\partial \phi}{\partial n} (\Hat{n} \cdot \Hat{s}) = \Hat{s} \cdot \nabla \phi$$
+\textbf{Divergence} $ \mbox{div } A = \nabla \cdot A$
+\\
+\\
+\textbf{Curl} $ \mbox{curl } A = \nabla \times A$
+\\
+\\
+\textbf{Tangent plane }$(\boldsymbol{r} - \boldsymbol{r}_P)\cdot(\nabla \phi)_P = 0$
+\\
+\\
+\textbf{Sum and product formulae}
+\begin{align*}
+    \nabla (\phi_1 + \phi_2) &= \nabla \phi_1 + \nabla \phi_2 \\
+    \mbox{div} (A + B) &= \mbox{div} A + \mbox{div} B
+    \\
+    \mbox{curl} (A+B) &= \mbox{curl} A + \mbox{curl} B
+    \\
+    \nabla (\phi \psi) &= \phi \nabla \psi + \psi \nabla \phi
+    \\
+    \mbox{div} \phi A &= \phi \mbox{div} A + \nabla \phi \cdot A
+\end{align*}
+\textbf{Laplacian}
+$$\nabla^2 A = \frac{\partial^2 \boldsymbol{A}}{\partial x^2} + \frac{\partial^2 \boldsymbol{A}}{\partial y^2} + \frac{\partial^2 \boldsymbol{A}}{\partial z^2}$$
+\textbf{Curl of a gradient } $\mbox{curl } \nabla \phi = 0$
+\\
+\\
+\textbf{Divergence of a curl} $ \mbox{div (curl} A) = 0$
+\\
+\\
+\textbf{Curl of a curl} $\mbox{curl(curl(} A) = \nabla (\mbox{div }A) - \nabla^2 A$
+\\
+\\
+\textbf{Irrotational Vector field} Curl A = 0
+\\
+\\
+\textbf{Solenoidal Vector field} Div A = 0
+\\
+\\
+\textbf{Path integral } $$\int_\gamma A \cdot \textit{d}r = \int_\gamma (A \cdot \frac{\textit{d}r}{\textit{d}s}) \textit{d}s$$
+\\
+\\
+\textbf{Conservative forces} Where $F = \nabla \phi$, $\int_\gamma A \cdot \textit{d}r  = \phi(B) - \phi(A)$, which is independent of the path joining A and B.
+\\
+\\
+\textbf{Potential} In the case of conservative field F = $\nabla \phi$, the differentiable, scalar, function $\phi$ is called the potential
+\\
+\\
+\textbf{Closed surface} this divides three-dimensional space into two non-connected regions - an interior region and an exterior region
+\\
+\\
+\textbf{Simple closed surface} this is a closed surface which does not intersect itself
+\\
+\\
+\textbf{Convex surface} this is a surface which is crossed by a straight line at most twice
+\\
+\\
+\textbf{Open surface} this does not divide space into two non-connected regions - it has a boundary which can
+be represented by a closed curve. (A closed surface can be thought of as the sum of two open surfaces).
+\\
+\\
+\textbf{Projection Theorem}
+$$
+\int_S \textit{f}(P) \textit{d}S = \int_\Sigma \textit{f}(P) \frac{\textit{d}x\textit{d}y}{| n \cdot \Hat{k} |} 
+$$
+\\
+\\
+\textbf{Volume Integral}
+$$
+\int_\tau f d \tau = \int_\tau f dxdydz
+$$
+in Cartesian coordinates.
+\\
+\\
+\textbf{Green's Theorum}
+$$
+\oint_C (L  dx + M dy) = \int_R (\frac{\partial M}{\partial x} - \frac{\partial L}{\partial y}) dx dy
+$$ where R is a closed plane region bounded by a simple convex anticlockwise curve C in the x-y plane.
+Also true for non convex curves by splitting region into convex sections and summing. Additionally, it can be extended to multiply connected regions by interpreting C to be the entire, outer and inner boundary, with the region always to the left.
+\\
+\\
+\textbf{Stokes Theorem}
+$$
+\oint_C \mathbf{F} \cdot d \mathbf{r} = \int_R \text{curl }  \mathbf{F} \cdot \hspace{2pt} d \mathbf{S}
+$$
+Where the direction of the curve C and the normal to S are related by a right hand rule, and S is an \textbf{open} surface bounded by C.
+\\
+\\
+\textbf{Divergence theorem}
+$$ 
+\int_S \mathbf{A} \cdot \hspace{2pt} d\mathbf{S} = \int_\tau \text{div} \hspace{2pt} \mathbf{A} \hspace{2pt} d\tau
+$$
+if $\tau$ is a volume enclosed by a closed surface S. This can be extended to simply and multiply connected regions similarly to Green's Theorem
+\\
+\\
+\textbf{Flux}
+The flux of a surface A is $$ \int_S \mathbf{A} \cdot d \mathbf{S}$$
+\\
+\\
+\textbf{Green's First Identity}
+$$
+\int_S \bigg \{ \phi \frac{\partial \psi}{\partial n}\bigg \} dS = \int_\tau \big \{ \phi \nabla^2 \psi + (\nabla \phi) \cdot (\nabla \psi) \big \} d\tau
+$$ This is obtained from considering $A = \phi \nabla \psi $ and the divergence theorem.
+\\
+\\
+\textbf{Green's Second Identity}
+$$
+\int_S \bigg \{ \phi \frac{\partial \psi}{\partial n} - \psi \frac{\partial \phi}{\partial n}\bigg \} dS = \int_\tau \big \{ \phi \nabla^2 \psi - \psi \nabla^2 \phi \big \} d\tau
+$$ which can be derived from Green's first identity, interchanging the symbols and subtracting one from the other. 
+\\
+\\
+\textbf{Gauss's flux theorem}
+$$
+\int_S \frac{\mathbf{\hat{n} \cdot r}}{r^3} dS = \begin{cases} 0, & \text{if the origin is exterior to S} \\ 4\pi, & \text{if the origin is interior to S}\end{cases}
+$$
+\textbf{Inverse function theorem}
+Around any point where $det(J(x_u))$ is non zero, there exists a neighbourhood in which the $u_i$ can be expressed as single valued function of the $x_i$.
+\\
+\\
+\textbf{Curvilinear coordinate system} Define $u_i = u_i(x_1, x_2, x_3)$ as a single valued function. $(u_1, u_2, u_3$ is said to be a curvilinear coordinate system. 
+\\
+\\
+\textbf{Orthogonal curvilinear coordinate system}
+Define $a_i = \frac{\nabla u_i}{| \nabla u_i |}$. If $(a_1, a_2, a_3)$ are mutually orthogonal (ie $a_i \cdot a_j = 0 \forall i \ne j$) then it is an orthogonal curvilinear coordinate system.
+\\
+\\
+\textbf{Length scales}
+\\
+$$
+h_i = \bigg | \frac{\partial \mathbf{r}}{\partial u_i} \bigg |
+$$
+\\
+\\
+\textbf{Path element} 
+$$
+d\mathbf{r} = h_1du_1\hat{\mathbf{e}}_1 + h_2du_2\hat{\mathbf{e}}_2 + 
+h_3du_3\hat{\mathbf{e}}_3
+$$
+\\
+\textbf{Volume element}
+$$
+d\tau = h_1h_2h_3du_1du_2du_3
+$$
+\\
+\textbf{Surface element}
+\\
+With $u_1$ constant:
+$$
+dS = h_2h_3du_2du_3
+$$
+\textbf{Gradient in coordinate systems}
+$$
+\nabla \Phi = \frac{\hat{\mathbf{e}}_1}{h_1} \frac{\partial \Phi}{\partial u_1} +  \frac{\hat{\mathbf{e}}_2}{h_2} \frac{\partial \Phi}{\partial u_2} +  \frac{\hat{\mathbf{e}}_3}{h_3} \frac{\partial \Phi}{\partial u_3}
+$$
+\\
+\textbf{Divergence in orthogonal coordinate systems}
+$$
+\nabla \cdot A = \frac{1}{h_1h_2h_3} \bigg \{ \frac{\partial}{\partial u_1}(h_2h_3A_1) +\frac{\partial}{\partial u_2}(h_1h_3A_2) + \frac{\partial}{\partial u_3}(h_1h_2A_3) \bigg \}
+$$
+\textbf{Curl in orthogonal coordinate systems}
+$$
+curl A = \frac{1}{h_1h_2h_3} \begin{vmatrix} h_1\hat{\mathbf{e}}_1 & h_2\hat{\mathbf{e}}_2 & h_3\hat{\mathbf{e}}_3 \\
+\frac{\partial}{\partial u_1} & \frac{\partial}{\partial u_2} & \frac{\partial}{\partial u_3}  \\ h_1A_1 & h_2A_2 & h_3A_3\end{vmatrix}
+$$
+\\
+\textbf{Laplacian in orthogonal coordinate systems}
+\begin{align*}
+\nabla^2 A &= \nabla \cdot \nabla A \\
+&= \frac{1}{h_1h_2h_3} \bigg \{ \frac{\partial}{\partial u_1}(h_2h_3\frac{1}{h_1}\frac{\partial A}{\partial u_1}) +\frac{\partial}{\partial u_2}(h_1h_3\frac{1}{h_2}\frac{\partial A}{\partial u_2}) + \frac{\partial}{\partial u_3}(h_1h_2\frac{1}{h_3}\frac{\partial A}{\partial u_3}) \bigg \}
+\end{align*}
+\textbf{Cartesian Coordinates} $(x,y,z)$ 
+\\
+\begin{align*}
+    &d\tau = dxdydz \\
+    &d\mathbf{r} = dx\mathbf{i}  + dy\mathbf{j} + dz\mathbf{k}\\
+    &h_1 = h_2 = h_3 = 1 \\
+    &\nabla \Phi = \mathbf{i} \frac{\partial \Phi}{\partial x} +  \mathbf{j} \frac{\partial \Phi}{\partial y} +  \mathbf{k} \frac{\partial \Phi}{\partial z}
+\end{align*}
+\\
+\textbf{Cylindrical Polar coordinates} $(r, \theta, z)$
+\\
+\begin{align*}
+    &d\tau = rdrd\theta dz \\
+    &d\mathbf{r} = dx\mathbf{i}  + rd\theta \mathbf{j} + dz\mathbf{k}\\
+    &h_1 = h_3 = 1 \\
+    & h_2 = r \\
+    & \nabla \Phi = \hat{\mathbf{r}} \frac{\partial \Phi}{\partial r} +  \frac{\hat{\theta}}{r} \frac{\partial \Phi}{\partial \theta} +  \hat{\mathbf{z}} \frac{\partial \Phi}{\partial z}
+\end{align*}
+\\
+\textbf{Spherical Polar coordinates} $(r, \theta, \phi)$
+\\
+\begin{align*}
+    &d\tau = r^2sin(\theta)drd\theta d\phi \\
+    &d\mathbf{r} = dx\mathbf{i}  + rd\theta \mathbf{j} + rsin(\theta)d\phi \mathbf{k}\\
+    &h_1  = 1 \\
+    & h_2 = r \\
+    & h_3 = rsin(\theta) \\
+    & \nabla \Phi = \hat{\mathbf{r}} \frac{\partial \Phi}{\partial r} +  \frac{\hat{\theta}}{r} \frac{\partial \Phi}{\partial \theta} +  \frac{\hat{\phi}}{rsin(\theta)} \frac{\partial \Phi}{\partial \phi}
+\end{align*}
+\textbf{Changes of Variable in surface integration} \\
+Say we have a surface parameterized by two variables ie
+$$
+x = m(u,v), y = g(u,v), z= h(u,v)
+$$
+Then we can write the surface element as:
+$$
+dS = \bigg | \frac{\partial \mathbf{r}}{\partial u} \times \frac{\partial \mathbf{r}}{\partial v} \bigg | dudv
+$$
+and then:
+$$
+\int_S f(x,y,z) dS = \int_S F(u,v) \bigg | \frac{\partial \mathbf{r}}{\partial u} \times \frac{\partial \mathbf{r}}{\partial v} \bigg | dudv
+$$
+where $F(u,v) = f(m(u,v),g(u,v),h(u,v))$
+
+\section{Fourier Series}
+
+\textbf{Orthonormal systems}\\
+A sequence of integrable functions $\{ \phi_i \}_{i=1}^\infty$ on an interval [a,b] is called orthonormal if:
+$$
+\int_a^b \phi_i\phi_j dx = \delta_{ij}
+$$
+\\
+\textbf{Periodic functions} \\
+A function F is periodic with period a if:
+$$
+F(x) = F(x+a) \text{for all x}
+$$
+\textbf{Even and Odd functions}\\
+A function is \textbf{even} about x=a iff $f(x+a) = f(x-a)$ for all x \\
+A function is \textbf{odd} about x=a iff $f(x+a) = -f(x-a)$ for all x
+\\
+\\
+\textbf{Fourier Series} \\
+Take $f(x)$ a periodic function with period 2L. We define the Fourier series over $[-L,L]$.
+$$
+f(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n \text{cos}(\frac{m\pi x}{L}) + b_n \text{sin}(\frac{m\pi x}{L})
+$$
+with coefficients defined as:
+\begin{align*}
+    a_n &= \frac{1}{L} \int_{-L}^L f(x)\text{cos}(\frac{n\pi x}{L}) dx 
+    & x = 0 \to \infty \\
+    b_n &= \frac{1}{L} \int_{-L}^L f(x)\text{sin}(\frac{n\pi x}{L}) dx 
+    & x = 1 \to \infty \\
+\end{align*}
+\\
+\textbf{Parseval's Theorem} \\
+If we define f(x) as a Fourier series as above then:
+$$
+\frac{1}{L}\int_{-L}^L (f(x))^2 dx = \frac{1}{2}a_0^2 + \sum_{n=1}^\infty (a_n^2 + b_n^2)
+$$
+\\
+\textbf{Half-range Fourier cosine series}
+\\
+\begin{align*}
+    f(x) &= \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n\text{cos}(\frac{n\pi x}{L}) & (0 \leq x \leq L) \\
+    a_n &= \frac{2}{L} \int_0^L f(x)\text{cos}(\frac{n\pi x}{L}) dx & (n = 0 \to \infty)
+\end{align*}
+\textbf{Half-range Fourier Sine series}
+\\
+\begin{align*}
+    f(x) &= \sum_{n=1}^\infty a_n\text{sin}(\frac{n\pi x}{L}) & (0 \leq x \leq L) \\
+    a_n &= \frac{2}{L} \int_0^L f(x)\text{sin}(\frac{n\pi x}{L}) dx & (n = 1 \to \infty)
+\end{align*}
+\\
+\textbf{Parseval's for half range series}
+\begin{align*}
+    \frac{2}{L}\int_{0}^L (f(x))^2 dx \hspace{5pt} &= \frac{1}{2}a_0^2 + \sum_{n=1}^\infty a_n^2 & \text{(Cosine series)}\\
+    &=  \sum_{n=1}^\infty  b_n^2 & \text{(Sine series)}
+\end{align*}
+\\
+\textbf{Exponential form of the Fourier Series}
+\\
+\begin{align*}
+    f(x) &= \sum_{n=-\infty}^\infty c_n e^{\frac{in\pi x}{L}} & |x| < L \\
+    c_n &= \frac{1}{2L}\int_{-L}^{L} f(x) e^{-\frac{in\pi x}{L}} dx, & n = -\infty \to \infty
+\end{align*}
+\section{Fourier transforms}
+\textbf{Fourier transform}
+$$
+\hat{f}(\omega) = \int_{-\infty}^\infty f(x)e^{-i\omega x}dx
+$$
+\textbf{Inverse Fourier Transform}
+$$
+f(x) = \frac{1}{2\pi}\int_{-\infty}^\infty \hat{f}(\omega)e^{i\omega x}d\omega
+$$
+\textbf{Fourier cosine transform}
+$$
+\hat{f}_c(\omega) = \int_{0}^\infty f(x)\text{cos}(\omega x)dx
+$$
+Note for even f(x): $\hat{f}(\omega) = 2\hat{f}_c(\omega)$ \\
+\textbf{Inverse Fourier cosine transform}
+$$
+ f(x)= \frac{2}{\pi}\int_{0}^\infty \hat{f}_c(\omega)\text{cos}(\omega x)d\omega
+$$
+\textbf{Fourier sine transform}
+$$
+\hat{f}_s(\omega) = \int_{0}^\infty f(x)\text{sin}(\omega x)dx
+$$
+\textbf{Inverse Fourier sine transform}
+$$
+\hat{f}_s(\omega) = \frac{2}{\pi} \int_{0}^\infty f(x)\text{sin}(\omega x)d\omega
+$$
+\subsection{Properties of Fourier Transforms}
+\begin{enumerate}
+    \item $\mathcal{F} \{ af(x) +bg(x) \} = a\hat{f}(\omega) + b\hat{g}(\omega) $ \hspace{6pt} (Linearity)
+    \item $\f \{ f(ax) \} = \frac{1}{a} \hat{f}(\frac{\omega}{a}) $ \hspace{6pt} For a $>$ 0
+    \item $\f \{ f(x-x_0) \} = e^{-i\omega x_0} \hat{f} (\omega)$
+    \item $\f \{e^{i\omega_0 x}f(x) \} = \hat{f}(\omega-\omega_0) $
+    \item $\f \{ \hat{f} (x) \} = 2\pi f(-\omega)$ \hspace{6pt} Symmetry Formula
+    \item $\f \{ d^n f / d x^n \} = (i\omega)^n \hat{f}(\omega) $
+    \item $\f \{ xf(x) \} = i \hat{f}' (\omega) $
+\end{enumerate}
+\subsection{Properties of Half range Fourier Transforms}
+\begin{enumerate}
+    \item $\mathcal{F}_c \{f'(x) \} = -f(0) + \omega \hat{f}_s(\omega)$
+    \item $\mathcal{F}_s \{f'(x) \} = - \omega \hat{f}_c(\omega)$ 
+    \item $\mathcal{F}_c \{f''(x) \} = -f'(0) - \omega^2 \hat{f}_c(\omega)$
+    \item $\mathcal{F}_s \{f''(x) \} = \omega f(0) - \omega^2 \hat{f}_s(\omega)$
+\end{enumerate}
+\textbf{Convolution Theorem}
+Define convolution as:
+$$
+f(x) * g(x) = \int_{-\infty}^{\infty} g(u)f(x-u) du
+$$
+Then we have the result for fourier transforms:
+$$
+\f \{ f * g \} = \hat{f}(\omega)\hat{g}(\omega)
+$$
+\textbf{Energy Theorem} \\
+This is Parseval's theorem for Fourier transforms, if f(x) is  a real valued function then:
+$$
+\frac{1}{2\pi} \int_{-\infty}^\infty \big | \hat{f}(\omega) \big |^2 d\omega = \int_{-\infty}^\infty \big [ f(x) \big ]^2 dx
+$$
+\textbf{Mean value theorem for integrals} \\
+For g(x) continuous on [a,b] then,
+$$
+\int_a^b g(x) dx = (b-a) g(\Bar{x})
+$$
+for some $\Bar{x}$
+
+\textbf{Dirac Delta Function} \\
+The dirac delta is defined to essentially be infinite at x = 0 and zero elsewhere. The important property is:
+$$
+\int_{-\infty}^{\infty} \delta(x) dx = 1
+$$
+\textbf{Sifting property of the Dirac Delta function}
+$$
+\int_{-\infty}^{\infty} g(x) \delta(x - a) dx = g(a)
+$$
+\section{Partial Differential equations}
+
+\textbf{The wave equation}
+$$
+\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+$$
+\textbf{The heat equation}
+$$
+\frac{\partial u}{\partial t} = k^2 \nabla^2 u
+$$
+\textbf{Laplace's Equation}
+$$
+\nabla^2 \phi = f(\mathbf{r})
+$$
+\textbf{Green's function in 3D}
+\begin{align*}
+    \nabla^2 G &= \delta(\mathbf{ r}- \mathbf{r_0}) \\
+    G(\mathbf{r};\mathbf{r_0}) &= - \frac{1}{4\pi |\mathbf{r} - \mathbf{r_0}|}
+\end{align*}
+\textbf{Green's function in 2D}
+\begin{align*}
+    \nabla^2 G &= \delta(\mathbf{ r}- \mathbf{r_0}) \\
+    G(\mathbf{r};\mathbf{r_0}) &= \frac{1}{2\pi}\text{ln}| \mathbf{x} - \mathbf{x_0}|
+\end{align*}
+\end{document}
